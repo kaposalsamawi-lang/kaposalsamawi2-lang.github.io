@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXUS // Cyber Operations</title>
+<style>
+:root{--bg:#06080d;--panel:#0c1018;--panel2:#111722;--line:#1c2635;--text:#edf3fa;--muted:#8190a5;--cyan:#46d9ff;--green:#55f2a6;--orange:#ffb84d;--red:#ff607a;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#12324755,transparent 32%),var(--bg);color:var(--text);font-family:Inter,Tahoma,Arial,sans-serif}.app{display:flex;min-height:100vh}.side{width:275px;background:#080b11dd;border-left:1px solid var(--line);padding:22px 16px;position:fixed;inset:0 0 0 auto;z-index:20;backdrop-filter:blur(16px)}.logo{display:flex;align-items:center;gap:12px;padding:8px 10px 25px}.mark{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#153c4b,#0b1823);border:1px solid #2a6074;color:var(--cyan);font-weight:900;font-size:22px}.logo b{font-size:18px;letter-spacing:2px}.logo small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.section{color:#56657a;font-size:10px;font-weight:bold;letter-spacing:1px;padding:15px 12px 7px}.nav button{width:100%;border:0;background:transparent;color:#9aa9ba;padding:12px 13px;border-radius:12px;text-align:right;display:flex;gap:12px;align-items:center;margin:3px 0}.nav button:hover{background:#111a27;color:#fff}.nav button.active{background:linear-gradient(90deg,#102536,#0d151f);color:#fff;box-shadow:inset -3px 0 var(--cyan)}.nav i{font-style:normal;width:22px;text-align:center}.bottom{position:absolute;bottom:18px;left:16px;right:16px;border:1px solid var(--line);background:#0b1018;padding:12px;border-radius:13px;font-size:11px;color:var(--muted);line-height:1.7}.online{color:var(--green);font-size:10px}.main{margin-right:275px;width:calc(100% - 275px);padding:26px;max-width:1600px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.top h1{font-size:26px;margin:0}.top p{color:var(--muted);font-size:12px;margin:6px 0}.topright{display:flex;align-items:center;gap:10px}.clock,.profile{border:1px solid var(--line);background:#0b1018;border-radius:12px;padding:10px 13px;font-size:12px}.profile{display:flex;gap:8px;align-items:center}.avatar{width:28px;height:28px;border-radius:9px;background:#173244;display:grid;place-items:center;color:var(--cyan)}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(120deg,#0c1924,#0a1018 60%,#101a20);border:1px solid var(--line);border-radius:22px;padding:25px;display:flex;justify-content:space-between;gap:20px;overflow:hidden;position:relative}.hero:after{content:"NEXUS";position:absolute;font-size:130px;font-weight:900;color:#fff02;left:-10px;bottom:-45px;letter-spacing:10px}.hero h2{margin:0 0 8px;font-size:28px;position:relative;z-index:1}.hero p{color:var(--muted);max-width:650px;line-height:1.8;position:relative;z-index:1}.actions{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2}.btn{border:1px solid #294051;background:#101a24;color:#dbe8f3;padding:10px 14px;border-radius:10px;cursor:pointer}.btn.primary{background:#143847;border-color:#28687b;color:#bff5ff}.btn:hover{filter:brightness(1.18)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:15px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px}.stat small{color:var(--muted);font-size:11px}.stat b{font-size:25px;display:block;margin-top:8px}.up{color:var(--green);font-size:10px}.layout{display:grid;grid-template-columns:1.45fr .75fr;gap:15px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:17px}.panel h3{font-size:14px;margin:0 0 14px}.map{height:400px;border-radius:13px;position:relative;overflow:hidden;background:#07121b;border:1px solid #172b3b}.map:before{content:"";position:absolute;inset:-10%;background:linear-gradient(28deg,transparent 44%,#17384b 45%,#17384b 46%,transparent 47%),linear-gradient(-22deg,transparent 56%,#142f40 57%,#142f40 58%,transparent 59%),repeating-linear-gradient(90deg,transparent 0 55px,#102331 56px 58px);opacity:.8;transform:rotate(-2deg)}.water{position:absolute;width:130%;height:80px;top:45%;right:-20%;background:#082c42;transform:rotate(-17deg);opacity:.8}.mapgrid{position:absolute;inset:0;background-image:linear-gradient(#31566a22 1px,transparent 1px),linear-gradient(90deg,#31566a22 1px,transparent 1px);background-size:45px 45px}.pin{position:absolute;width:17px;height:17px;border-radius:50%;background:var(--green);border:3px solid #d8fff0;box-shadow:0 0 0 8px #55f2a615,0 0 25px #55f2a6;cursor:pointer}.pin.blue{background:var(--cyan);box-shadow:0 0 0 8px #46d9ff15,0 0 25px #46d9ff}.pin.orange{background:var(--orange);box-shadow:0 0 0 8px #ffb84d15,0 0 25px #ffb84d}.a{right:22%;top:29%}.b{right:59%;top:54%}.c{right:39%;top:70%}.legend{position:absolute;left:13px;top:13px;background:#071018dd;border:1px solid var(--line);border-radius:10px;padding:9px;font-size:10px;line-height:2;z-index:3}.maptag{position:absolute;bottom:12px;right:12px;background:#071018dd;border:1px solid var(--line);padding:7px 10px;border-radius:9px;font-size:10px;color:#9eafc0}.activity{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid #182331}.activity:last-child{border:0}.badge{font-size:9px;padding:4px 7px;border-radius:20px;background:#102a21;color:var(--green);height:max-content}.feed{color:#dce5ed;font-size:12px;line-height:1.6}.feed small{color:var(--muted)}.locations,.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.location{border:1px solid var(--line);background:#0b1119;border-radius:15px;overflow:hidden}.cover{height:130px;background:linear-gradient(135deg,#102d3a,#0c121b);position:relative;overflow:hidden}.cover:before{content:"";position:absolute;inset:15px;border:1px solid #2b6578;border-radius:50%;box-shadow:0 0 40px #46d9ff18}.cover:after{content:"";position:absolute;width:120%;height:2px;background:#46d9ff66;top:50%;right:-10%;transform:rotate(-15deg)}.locbody{padding:14px}.locbody h3{margin:0 0 6px;font-size:14px}.locbody p{color:var(--muted);font-size:11px;line-height:1.7;min-height:38px}.tags{display:flex;gap:5px;flex-wrap:wrap}.tag{font-size:9px;color:#a9bacb;background:#111d29;padding:4px 7px;border-radius:7px}.terminal{height:420px;background:#030609;border:1px solid #17312d;border-radius:13px;padding:15px;font:13px/1.8 Consolas,monospace;color:#9affcb;overflow:auto;direction:ltr;text-align:left}.termrow{display:flex;gap:7px;margin-top:10px;direction:ltr}.termrow input{flex:1;background:#05090d;border:1px solid #1d3932;border-radius:9px;padding:11px;color:#9affcb;outline:none}.scanbox{max-width:800px}.select{width:100%;background:#0a1119;color:#fff;border:1px solid var(--line);padding:12px;border-radius:10px}.progress{height:8px;background:#17212d;border-radius:20px;overflow:hidden;margin-top:16px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));transition:.4s}.result{margin-top:15px;background:#070b10;border:1px solid var(--line);padding:14px;border-radius:11px;font:12px/1.9 Consolas,monospace;color:#a9bac8}.reportgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.report{padding:18px;background:#0b1119;border:1px solid var(--line);border-radius:14px}.report span{color:var(--muted);font-size:11px}.report b{display:block;margin-top:7px;font-size:21px}.photo{height:230px;border:1px solid var(--line);border-radius:15px;overflow:hidden;position:relative;background:#0b141c}.photo svg{width:100%;height:100%}.photo strong{position:absolute;bottom:0;right:0;left:0;padding:14px;background:linear-gradient(transparent,#000d);font-size:13px}.notice{border:1px solid #4a3b1c;background:#1e190e;color:#f6d990;padding:12px;border-radius:11px;font-size:11px;line-height:1.8;margin-bottom:14px}@media(max-width:1000px){.side{width:76px}.logo div:not(.mark),.nav span,.section,.bottom{display:none}.logo{justify-content:center}.nav button{justify-content:center}.main{margin-right:76px;width:calc(100% - 76px)}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.locations,.gallery{grid-template-columns:1fr 1fr}}@media(max-width:620px){.main{padding:13px}.topright{display:none}.hero{padding:18px}.hero h2{font-size:22px}.stats,.locations,.gallery,.reportgrid{grid-template-columns:1fr}.map{height:330px}.side{width:62px}.main{margin-right:62px;width:calc(100% - 62px)}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3QpP8fW9L1zQ6xQv9xR4KQ1y1YxM=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+const locationConfirmModal=document.getElementById("locationConfirmModal");
+if(locationConfirmModal){
+  locationConfirmModal.addEventListener("click", function(e){
+    if(e.target===locationConfirmModal) closeLocationConfirm();
+  });
+}
+</script>
+<style>
+#realMap.leaflet-container{background:#07121b}
+.location-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.location-tools .btn{cursor:pointer}
+</style>
+
+<style>
+.location-modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(5px);
+  display:none;align-items:center;justify-content:center;z-index:99999;padding:20px;
+}
+.location-modal.show{display:flex}
+.location-modal-card{
+  width:min(430px,100%);background:#0b1620;border:1px solid #263746;
+  border-radius:18px;padding:24px;box-shadow:0 25px 80px rgba(0,0,0,.55);
+  text-align:center;direction:rtl;
+}
+.location-modal-icon{font-size:46px;margin-bottom:8px}
+.location-modal-card h3{margin:0 0 10px}
+.location-modal-card p{color:var(--muted);font-size:13px;line-height:1.9;margin:0 0 20px}
+.location-modal-actions{display:flex;gap:10px;justify-content:center}
+.location-modal-actions button{min-width:110px}
+</style>
+</head>
+<body>
+<div id="locationConfirmModal" class="location-modal" role="dialog" aria-modal="true" aria-labelledby="locationConfirmTitle">
+  <div class="location-modal-card">
+    <div class="location-modal-icon">📍</div>
+    <h3 id="locationConfirmTitle">تحديد موقعك</h3>
+    <p>
+      هل أنت موافق على تحديد موقع جهازك وعرض موقعك الحقيقي على الخريطة؟
+      <br>
+      سيطلب المتصفح أيضاً إذناً للوصول إلى الموقع.
+    </p>
+    <div class="location-modal-actions">
+      <button class="btn primary" onclick="confirmRealLocation()">موافق</button>
+      <button class="btn" onclick="closeLocationConfirm()">إلغاء</button>
+    </div>
+  </div>
+</div>
+<div class="app">
+<aside class="side">
+<div class="logo"><div class="mark">N</div><div><b>NEXUS</b><small>CYBER OPERATIONS</small></div></div>
+<div class="section">WORKSPACE</div>
+<nav class="nav">
+<button class="active" onclick="page('home',this)"><i>⌂</i><span>لوحة التحكم</span></button>
+<button onclick="page('map',this)"><i>⌖</i><span>الخريطة</span></button>
+<button onclick="page('mylocation',this)"><i>📍</i><span>موقعي</span></button>
+<button onclick="page('sites',this)"><i>◉</i><span>المواقع</span></button>
+<button onclick="page('gallery',this)"><i>▣</i><span>المعرض</span></button>
+<div class="section">SECURITY LAB</div>
+<button onclick="page('terminal',this)"><i>›_</i><span>Terminal</span></button>
+<button onclick="page('scan',this)"><i>⌕</i><span>محاكي الفحص</span></button>
+<button onclick="page('reports',this)"><i>▤</i><span>التقارير</span></button>
+</nav>
+<div class="bottom"><span class="online">● ONLINE</span><br>بيئة تدريب معزولة. لا يوجد اتصال بأهداف حقيقية.</div>
+</aside>
+
+<main class="main">
+<header class="top"><div><h1 id="title">لوحة التحكم</h1><p>مركز عمليات رقمي — واجهة محاكاة تعليمية</p></div><div class="topright"><div class="clock" id="clock">--:--:--</div><div class="profile"><div class="avatar">ق</div>المستخدم</div></div></header>
+
+<section id="home" class="page active">
+<div class="hero"><div><h2>مرحباً بك في NEXUS</h2><p>منصة متكاملة لاستكشاف الخرائط والمواقع والعمليات داخل مختبر سيبراني افتراضي. جميع المواقع والنتائج هنا تجريبية.</p><div class="actions"><button class="btn primary" onclick="pageById('map')">فتح الخريطة</button><button class="btn" onclick="pageById('scan')">بدء محاكاة</button></div></div></div>
+<div class="stats"><div class="stat"><small>المواقع</small><b>12</b><span class="up">+2 هذا الأسبوع</span></div><div class="stat"><small>النقاط النشطة</small><b>08</b><span class="up">مستقرة</span></div><div class="stat"><small>عمليات المحاكاة</small><b id="count">24</b><span class="up">+8%</span></div><div class="stat"><small>حالة النظام</small><b style="color:var(--green)">ONLINE</b><span class="up">محمي</span></div></div>
+<div class="layout"><div class="panel"><h3>الخريطة التشغيلية</h3><div class="map"><div class="water"></div><div class="mapgrid"></div><button class="pin a" onclick="info('Alpha Lab')"></button><button class="pin blue b" onclick="info('Data Center')"></button><button class="pin orange c" onclick="info('Network Lab')"></button><div class="legend">🟢 مختبر Alpha<br>🔵 مركز البيانات<br>🟠 مختبر الشبكات</div><div class="maptag">SIMULATION MAP</div></div></div><div class="panel"><h3>النشاط الأخير</h3><div class="activity"><span class="badge">OK</span><div class="feed">فحص Alpha Lab اكتمل<br><small>منذ دقيقتين</small></div></div><div class="activity"><span class="badge">MAP</span><div class="feed">تم فتح نقطة Data Center<br><small>منذ 6 دقائق</small></div></div><div class="activity"><span class="badge">LAB</span><div class="feed">تم تحديث بيئة التدريب<br><small>منذ 11 دقيقة</small></div></div><div class="activity"><span class="badge">REP</span><div class="feed">تقرير جديد جاهز<br><small>منذ 16 دقيقة</small></div></div></div></div>
+</section>
+
+<section id="map" class="page"><div class="notice">الخريطة مرسومة محلياً داخل الصفحة. لا يتم طلب موقع الجهاز ولا إرسال إحداثيات إلى أي خادم.</div><div class="panel"><h3>الخريطة التفاعلية</h3><div class="map" style="height:590px"><div class="water"></div><div class="mapgrid"></div><button class="pin a" onclick="info('Alpha Lab')"></button><button class="pin blue b" onclick="info('Data Center')"></button><button class="pin orange c" onclick="info('Network Lab')"></button><div class="legend">NEXUS MAP<br>3 نقاط رئيسية<br>12 نقطة افتراضية</div><div class="maptag">GPS: DISABLED • VIRTUAL COORDINATES</div></div></div></section>
+
+<section id="mylocation" class="page">
+<div class="notice">📍 سيتم استخدام موقع جهازك بعد موافقة المتصفح فقط. لا يمكن للموقع الحصول على GPS سراً أو بدون إذن.</div>
+<div class="layout">
+  <div class="panel">
+    <h3>📍 موقعي الحقيقي</h3>
+    <p style="color:var(--muted);font-size:12px;line-height:1.8">
+      اضغط «تحديد موقعي» للسماح للمتصفح بقراءة موقع جهازك. بعد ذلك ستظهر العلامة على الخريطة الحقيقية.
+    </p>
+    <div class="location-tools">
+      <button class="btn primary" onclick="openLocationConfirm()">📍 تحديد موقعي</button>
+      <button class="btn" onclick="centerMyLocation()" id="centerLocationBtn" disabled>🎯 العودة لموقعي</button>
+    </div>
+    <div id="locationStatus" class="result" style="margin-top:15px">
+      لم يتم تحديد الموقع بعد.
+    </div>
+    <div class="reportgrid" style="margin-top:15px">
+      <div class="report"><span>خط العرض</span><b id="lat">—</b></div>
+      <div class="report"><span>خط الطول</span><b id="lon">—</b></div>
+      <div class="report"><span>الدقة</span><b id="accuracy">—</b></div>
+      <div class="report"><span>وقت القراءة</span><b id="locTime">—</b></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>🗺️ الخريطة الحقيقية</h3>
+    <div id="realMap" style="height:460px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#07121b"></div>
+    <div style="margin-top:9px;color:var(--muted);font-size:11px">
+      الخريطة من OpenStreetMap. تحديد موقعك يتم بواسطة GPS/شبكات الجهاز وبموافقتك.
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="sites" class="page"><div class="locations">
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Alpha Lab</h3><p>مختبر تطبيقات ويب افتراضي للتعلم.</p><div class="tags"><span class="tag">WEB</span><span class="tag">ACTIVE</span></div><button class="btn" style="margin-top:12px" onclick="info('Alpha Lab')">عرض التفاصيل</button></div></div>
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Data Center</h3><p>مركز خدمات تجريبي مع بيانات وهمية.</p><div class="tags"><span class="tag">DATA</span><span class="tag">ONLINE</span></div><button class="btn" style="margin-top:12px" onclick="info('Data Center')">عرض التفاصيل</button></div></div>
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Network Lab</h3><p>مختبر شبكات لمحاكاة الخدمات والمنافذ.</p><div class="tags"><span class="tag">NETWORK</span><span class="tag">LAB</span></div><button class="btn" style="margin-top:12px" onclick="info('Network Lab')">عرض التفاصيل</button></div></div>
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Blue Zone</h3><p>محطة دفاع ومراقبة افتراضية.</p><div class="tags"><span class="tag">DEFENSE</span><span class="tag">SAFE</span></div><button class="btn" style="margin-top:12px" onclick="info('Blue Zone')">عرض التفاصيل</button></div></div>
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Training Hub</h3><p>منطقة الدروس والتحديات التعليمية.</p><div class="tags"><span class="tag">LEARN</span><span class="tag">CTF</span></div><button class="btn" style="margin-top:12px" onclick="info('Training Hub')">عرض التفاصيل</button></div></div>
+<div class="location"><div class="cover"></div><div class="locbody"><h3>Red Zone</h3><p>منطقة تحديات معزولة للمختبر.</p><div class="tags"><span class="tag">LAB</span><span class="tag">ISOLATED</span></div><button class="btn" style="margin-top:12px" onclick="info('Red Zone')">عرض التفاصيل</button></div></div>
+</div></section>
+
+<section id="gallery" class="page"><div class="gallery">
+<div class="photo"><svg viewBox="0 0 600 350"><rect width="600" height="350" fill="#08141d"/><path d="M0 275L125 170l105 80 125-135 130 115 115-70v190H0z" fill="#123447"/><circle cx="460" cy="70" r="40" fill="#ffb84d"/><path d="M60 295h480" stroke="#55f2a6" stroke-width="5"/></svg><strong>Alpha Lab — بيئة تدريب</strong></div>
+<div class="photo"><svg viewBox="0 0 600 350"><rect width="600" height="350" fill="#080e18"/><g fill="#173349"><rect x="70" y="55" width="90" height="235"/><rect x="190" y="85" width="90" height="205"/><rect x="310" y="45" width="90" height="245"/><rect x="430" y="75" width="90" height="215"/></g><g fill="#46d9ff"><circle cx="115" cy="100" r="5"/><circle cx="235" cy="130" r="5"/><circle cx="355" cy="90" r="5"/><circle cx="475" cy="120" r="5"/></g></svg><strong>Data Center — محاكاة</strong></div>
+<div class="photo"><svg viewBox="0 0 600 350"><rect width="600" height="350" fill="#061116"/><circle cx="300" cy="175" r="115" fill="none" stroke="#46d9ff" stroke-width="3"/><circle cx="300" cy="175" r="55" fill="none" stroke="#55f2a6" stroke-width="3"/><path d="M35 175h530M300 25v300M90 80l420 190M510 80L90 270" stroke="#1c5360"/><circle cx="300" cy="175" r="10" fill="#ffb84d"/></svg><strong>Network Lab — شبكة افتراضية</strong></div>
+</div></section>
+
+<section id="terminal" class="page"><div class="notice">Terminal تعليمي محلي. الأوامر لا تنفذ فحصاً حقيقياً ولا تتصل بأجهزة أو مواقع خارجية. جرّب: <b>help</b> أو <b>scan</b> أو <b>status</b> أو <b>map</b>.</div><div class="panel"><div id="term" class="terminal">NEXUS TERMINAL v2.0<br>Environment: ISOLATED SIMULATION<br>Network access: DISABLED<br><br><span style="color:#46d9ff">sim@nexus:~$</span> ready</div><div class="termrow"><input id="cmd" placeholder="اكتب أمراً تجريبياً..." onkeydown="if(event.key==='Enter')command()"><button class="btn" onclick="command()">تنفيذ</button></div></div></section>
+
+<section id="scan" class="page"><div class="panel scanbox"><h3>محاكي فحص بيئة التدريب</h3><p style="color:var(--muted);font-size:12px">اختر هدفاً افتراضياً ثم ابدأ عملية المحاكاة.</p><select id="target" class="select"><option>training.local</option><option>alpha.lab</option><option>datacenter.lab</option></select><button class="btn primary" style="margin-top:12px" onclick="scan()">بدء المحاكاة</button><div class="progress"><i id="bar"></i></div><div id="result" class="result">بانتظار بدء العملية...</div></div></section>
+
+<section id="reports" class="page"><div class="reportgrid"><div class="report"><span>حالة المختبر</span><b style="color:var(--green)">ONLINE</b></div><div class="report"><span>الأهداف الافتراضية</span><b>12</b></div><div class="report"><span>الخدمات التجريبية</span><b>31</b></div><div class="report"><span>الاتصالات الحقيقية</span><b style="color:var(--green)">0</b></div></div><div class="panel" style="margin-top:15px"><h3>آخر تقرير</h3><div id="lastReport" style="color:#a9bac8;font-size:12px;line-height:2">لم يتم تشغيل محاكاة جديدة.</div><button class="btn" onclick="saveReport()">حفظ TXT</button></div></section>
+</main></div>
+<script>
+const titles={home:"لوحة التحكم",map:"الخريطة التفاعلية",mylocation:"موقعي الحقيقي",sites:"المواقع التجريبية",gallery:"المعرض",terminal:"Terminal التدريبي",scan:"محاكي الفحص",reports:"التقارير"};
+function page(id,btn){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");document.getElementById("title").textContent=titles[id]||id}
+function pageById(id){document.querySelectorAll(".nav button").forEach((b,i)=>{});document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.getElementById("title").textContent=titles[id]}
+function info(x){alert("الموقع: "+x+"\\nالحالة: ACTIVE\\nالنوع: Virtual Training Location\\n\\nهذه بيانات محاكاة وليست موقعاً حقيقياً.")}
+function command(){let i=document.getElementById("cmd"),c=i.value.trim().toLowerCase(),t=document.getElementById("term");if(!c)return;if(c==="clear"){t.innerHTML="";i.value="";return}let o=c==="help"?"help\\nscan\\nstatus\\nmap\\nclear":c==="scan"?"[SIM] scanning training.local...\\n[+] 22/tcp OPEN (training)\\n[+] 80/tcp OPEN (training)\\n[+] 443/tcp OPEN (training)\\n[SIM] real network access: disabled":c==="status"?"SYSTEM: ONLINE\\nMODE: ISOLATED SIMULATION\\nREAL CONNECTIONS: 0":c==="map"?"VIRTUAL LOCATIONS: 12\\nGPS ACCESS: DISABLED":"Unknown command. Type help.";t.innerHTML+="<br><span style='color:#46d9ff'>sim@nexus:~$</span> "+esc(c)+"<br>"+esc(o).replace(/\\n/g,"<br>");t.scrollTop=t.scrollHeight;i.value=""}
+function esc(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function scan(){let b=document.getElementById("bar"),r=document.getElementById("result"),target=document.getElementById("target").value,n=0;r.textContent="جاري تشغيل المحاكاة...";b.style.width="0";let q=setInterval(()=>{n+=10;b.style.width=n+"%";if(n>=100){clearInterval(q);r.innerHTML="[SIMULATION COMPLETE]<br>Target: "+target+"<br>Virtual services: 3<br>Training findings: 2<br>Real connections: 0<br><span style='color:#55f2a6'>اكتملت المحاكاة بأمان.</span>";document.getElementById("lastReport").innerHTML="الهدف: <b>"+target+"</b><br>الخدمات: 3 افتراضية<br>نتائج التدريب: 2<br>الاتصالات الحقيقية: 0";document.getElementById("count").textContent="25"}},180)}
+function saveReport(){let s="NEXUS CYBER OPERATIONS\\nSIMULATION REPORT\\nReal connections: 0\\nTarget: "+document.getElementById("target").value;let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([s],{type:"text/plain"}));a.download="nexus-report.txt";a.click();URL.revokeObjectURL(a.href)}
+let realMap = null;
+let myLocationMarker = null;
+let myAccuracyCircle = null;
+let myLocation = null;
+
+function initRealMap(){
+  const el = document.getElementById("realMap");
+  if(!el || typeof L === "undefined") return;
+
+  if(realMap) {
+    realMap.invalidateSize();
+    return;
+  }
+
+  // عرض ابتدائي عام حتى يتم تحديد الموقع الحقيقي
+  realMap = L.map("realMap", {zoomControl:true}).setView([15.3694, 44.1910], 6);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(realMap);
+}
+
+function openLocationConfirm(){
+  const modal=document.getElementById("locationConfirmModal");
+  if(modal) modal.classList.add("show");
+}
+
+function closeLocationConfirm(){
+  const modal=document.getElementById("locationConfirmModal");
+  if(modal) modal.classList.remove("show");
+}
+
+function confirmRealLocation(){
+  closeLocationConfirm();
+  requestRealLocation();
+}
+
+function requestRealLocation(){
+  const status=document.getElementById("locationStatus");
+  if(!navigator.geolocation){
+    status.textContent="هذا المتصفح لا يدعم تحديد الموقع.";
+    return;
+  }
+
+  initRealMap();
+  status.textContent="جاري طلب إذن الموقع من المتصفح...";
+  navigator.geolocation.getCurrentPosition(showRealLocation,locationError,{
+    enableHighAccuracy:true,
+    timeout:20000,
+    maximumAge:0
+  });
+}
+
+function showRealLocation(pos){
+  initRealMap();
+
+  const lat=pos.coords.latitude;
+  const lon=pos.coords.longitude;
+  const acc=Math.round(pos.coords.accuracy);
+
+  myLocation = [lat, lon];
+
+  document.getElementById("lat").textContent=lat.toFixed(6);
+  document.getElementById("lon").textContent=lon.toFixed(6);
+  document.getElementById("accuracy").textContent=acc+" متر";
+  document.getElementById("locTime").textContent=new Date().toLocaleTimeString("ar-EG");
+
+  document.getElementById("locationStatus").innerHTML =
+    '<span style="color:#55f2a6">✓ تم تحديد موقعك بنجاح.</span><br>' +
+    'الإحداثيات متاحة داخل هذه الصفحة لعرض موقعك على الخريطة.';
+
+  const btn=document.getElementById("centerLocationBtn");
+  if(btn) btn.disabled=false;
+
+  if(myLocationMarker) realMap.removeLayer(myLocationMarker);
+  if(myAccuracyCircle) realMap.removeLayer(myAccuracyCircle);
+
+  myLocationMarker = L.marker([lat,lon]).addTo(realMap)
+    .bindPopup("<b>📍 موقعك الحالي</b><br>الدقة التقريبية: "+acc+" متر")
+    .openPopup();
+
+  myAccuracyCircle = L.circle([lat,lon], {
+    radius: acc,
+    weight: 1,
+    fillOpacity: 0.12
+  }).addTo(realMap);
+
+  realMap.setView([lat,lon], 16);
+}
+
+function centerMyLocation(){
+  if(myLocation && realMap){
+    realMap.setView(myLocation, 17, {animate:true});
+    if(myLocationMarker) myLocationMarker.openPopup();
+  }
+}
+
+function locationError(err){
+  const status=document.getElementById("locationStatus");
+  const msg={
+    1:"تم رفض إذن الموقع. اسمح بالوصول للموقع من إعدادات المتصفح إذا أردت استخدام الميزة.",
+    2:"تعذر تحديد الموقع حالياً. تأكد من تشغيل خدمة الموقع GPS/Location.",
+    3:"انتهت مهلة تحديد الموقع. حاول مرة أخرى."
+  }[err.code] || "حدث خطأ أثناء تحديد الموقع.";
+  status.textContent=msg;
+}
+
+// تهيئة الخريطة عند فتح صفحة موقعي
+document.addEventListener("DOMContentLoaded", ()=>{
+  setTimeout(initRealMap, 300);
+}); 
+function tick(){document.getElementById("clock").textContent=new Date().toLocaleTimeString("ar-EG");}tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
